@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<div data-role="page" id="pageone">
+		<div data-role="header">
+			<a data-transition="slidedown" class="ui-btn-right ui-link ui-btn ui-icon-carat-r ui-btn-icon-right ui-shadow ui-corner-all"
+			    data-icon="carat-r" id="oneSubmit">确定</a>
+			<h1>请输入以下内容</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form id="oneForm">
+				<!-- data-role="table" class="ui-responsive" -->
+				<table style="margin: auto auto">
+					<tbody>
+						<tr>
+							<td>
+								<label for="plan">计划接收量</label>
+								<input type="number" id="plan" placeholder="必填" value="10" min="0">
+							</td>
+							<td>
+								<label for="secure">安全库存量：</label>
+								<input type="number" id="secure" placeholder="必填" value="5" min="0">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="batch">批量：</label>
+								<input type="number" id="batch" placeholder="必填" value="10" min="0">
+							</td>
+							<td>
+								<label for="first">需求时界：</label>
+								<input type="number" id="first" placeholder="必填" value="3" min="0">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="now">现有库存：</label>
+								<input type="number" id="now" placeholder="必填" value="8" min="0">
+							</td>
+							<td>
+								<label for="last">计划时界：</label>
+								<input type="number" id="last" placeholder="必填" value="8" min="0">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="loss">损耗率(%)</label>
+								<input type="number" id="loss" value="0" placeholder="[0,100)(选填)">
+							</td>
+							<td>
+								<label for="qua">合格率(%)</label>
+								<input type="number" id="qua" value="100" placeholder="(0,100](选填)">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="pagetwo">
+		<div data-role="header">
+			<a data-icon="carat-l" id="reset1">重置</a>
+			<h1>请输入以下内容</h1>
+			<a href="#pagethree" data-transition="slidedown" class="ui-btn-right ui-link ui-btn ui-icon-carat-r ui-btn-icon-right ui-shadow ui-corner-all"
+			    data-icon="carat-r" id="twoSubmit">确定</a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<table data-role="table" class="ui-responsive table7_1">
+				<thead>
+					<tr>
+						<th>时段</th>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+						<td>11</td>
+					</tr>
+				</thead>
+				<tbody>
+					<form id="twoForm">
+						<tr class="ftr">
+							<th>预测量</th>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+						</tr>
+						<tr class="str">
+							<th>合同量</th>
+							<td>
+								<input type="number" value="12" min="0">
+							</td>
+							<td>
+								<input type="number" value="8" min="0">
+							</td>
+							<td>
+								<input type="number" min="0">
+							</td>
+							<td>
+								<input type="number" value="2" min="0">
+							</td>
+							<td>
+								<input type="number" value="7" min="0">
+							</td>
+							<td>
+								<input type="number" value="6" min="0">
+							</td>
+							<td>
+								<input type="number" min="0">
+							</td>
+							<td>
+								<input type="number" value="13" min="0">
+							</td>
+							<td>
+								<input type="number" value="5" min="0">
+							</td>
+							<td>
+								<input type="number" min="0">
+							</td>
+							<td>
+								<input type="number" value="2" min="0">
+							</td>
+						</tr>
+					</form>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div data-role="page" id="pagethree">
+		<div data-role="header">
+			<h1>MPS</h1>
+			<a data-icon="carat-l" id="reset2">重置</a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<div data-role="main" class="ui-content">
+				<table data-role="table" class="ui-responsive" id="rtable">
+					<thead>
+						<tr>
+							<th>时段</th>
+							<td>档期</td>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="tr1">
+							<th>预测量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr2">
+							<th>合同量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr3">
+							<th>毛需求</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr4">
+							<th>计划接收量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="only">
+							<th>安全库存量</th>
+							<td colspan="12" style="text-align: center"></td>
+						</tr>
+						<tr id="tr5">
+							<th>预计库存量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr6">
+							<th>净需求</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr7">
+							<th>计划产出量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr8">
+							<th>计划投入量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="tr9">
+							<th>可供销售量</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

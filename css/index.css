@@ -1,0 +1,24 @@
+#pagetwo table,
+#pagethree table {
+	border-collapse: collapse;
+}
+
+#pagetwo table,
+#pagetwo th,
+#pagetwo td,
+#pagethree table,
+#pagethree th,
+#pagethree td {
+	border: 1px solid black;
+}
+
+th {
+	background-color: #EFF0F4;
+}
+
+thead td,
+thead th {
+	background-color: #75C2F6;
+	color: #232931;
+	font-weight: bolder;
+}
